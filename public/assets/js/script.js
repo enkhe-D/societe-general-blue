@@ -65,10 +65,18 @@ const escapeXSS = (text) => {
         questionnaireBody.innerHTML = `
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
 
-        <div class="container-card-button text-erreur ">
-            ${nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`}
-            ${etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''}
-        </div>`;
+        <div class="container-card-button text-erreur">
+           ${etape == 0 ? `<p> Hello </p>`: ""}
+           ${etape == 1 ? `<p> Bonjour </p>
+           <img src="../images/teletravail.jpg" width="100"> 
+           <img src="../images/bureau.jpg" width="100">
+           `: ""}
+            ${
+                nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`
+            }
+            ${
+                etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''
+            }
 
     console.log('etape', etape);
     console.log('filtersSelected', filtersSelected);
@@ -81,11 +89,13 @@ const escapeXSS = (text) => {
     if (btn.textContent === 'Retour') {
         filtersSelected[questions[etape - 1].type] = null;
         etape--;
+        removeBar()
         questionnaireBody.setAttribute("id", "slide-"+etape)
     } else {
         const id = parseInt(btn.getAttribute('data-id'));
         filtersSelected[question.type] = id;
         etape++;
+        updateBar()
         questionnaireBody.setAttribute("id", "slide-"+etape)
     }
 
@@ -247,3 +257,19 @@ const escapeXSS = (text) => {
 
     displayAssos();
     }
+
+
+    
+var element = document.getElementById("myprogressBar"); 
+var taille = 1;
+
+function updateBar() {
+taille++; 
+  element.style.width = taille * 25 + '%';
+    element.innerHTML = taille  + '/4';
+}
+function removeBar() {
+taille--; 
+  element.style.width = taille * 25 + '%';
+    element.innerHTML = taille  + '/4';
+}
