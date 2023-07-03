@@ -1,0 +1,72 @@
+.questionnaire-body{
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:auto;
+}
+
+.title-asso{
+  text-align: center;
+}
+
+.title-question{
+  width: 100%;
+  border:5px solid pink;
+}
+
+.container-card-button{
+  border:5px solid green
+}
+
+.cards{
+  background-color: aqua;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name-asso{
+  border-radius:25px;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  width: 200px;
+}
+
+ul{
+  border:1px solid;
+}
+
+.card-contenue{
+  background-color: rgb(147, 204, 94);
+  width: 200px;
+  height: 200px;
+}
+
+.bg-resultat-asso{
+  background-color: rgb(161, 16, 149);
+  width: 275px;
+}
+
+.aucune-asso{
+  border: 5px solid black
+}
+
+.c-est-quoi{
+  background-color: blueviolet;
+}
+
+.btn-retour{
+  border:1px solid pink;
+  border-radius:10px;
+  width: 100%;
+}
+
+/* .block-items{
+  display: flex;
+  flex-wrap: wrap;
+  border:1px solid black;
+  height: 200px;
+}
+ */

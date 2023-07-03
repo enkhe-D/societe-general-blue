@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+{% block styles %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	{{ dump() }}
+
+	<h1 class="title-asso">Trouver mon asso</h1>
+
+	<section class="questionnaire-body container-card">
+		<h3 class="title-question">
+			Question
+		</h3>
+
+		<div class="block-items card">
+			<button type="button" class="item ">Réponse</button>
+			<button type="button" class="item">Réponse</button>
+			<button type="button" class="item">Réponse</button>
+			<button type="button" class="item">Retour</button>
+		</div>
+	</section>
+	{% block javascripts%}
+		<script>
+			const filters = {{ filters|json_encode()|raw }};
+const associations = {{ associations|json_encode()|raw }};
+		</script>
+	{% endblock %}
+{% endblock %}
