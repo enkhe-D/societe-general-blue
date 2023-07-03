@@ -63,6 +63,20 @@ ul{
   width: 100%;
 }
 
+#Progress_Status {
+  width: 50%;
+  background-color: #000000 ;
+}
+#myprogressBar {
+  width: 25%;
+  height: 35px;
+  background-color:#E4002C;
+  text-align: center;
+  line-height: 32px;
+  color: black;
+  transition: 2s;
+}
+
 /* .block-items{
   display: flex;
   flex-wrap: wrap;

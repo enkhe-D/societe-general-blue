@@ -23,6 +23,10 @@
 			<button type="button" class="item">Retour</button>
 		</div>
 	</section>
+
+	<div id="Progress_Status">
+  <div id="myprogressBar">1/4</div>
+</div>
 	{% block javascripts%}
 		<script>
 			const filters = {{ filters|json_encode()|raw }};
