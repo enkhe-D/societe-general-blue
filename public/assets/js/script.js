@@ -54,11 +54,10 @@ const escapeXSS = (text) => {
     const displayQuestion = () => {
         const question = questions[etape];
         const filters = question ? question.filters : [];
-        const filtersHTML = filters.map(filter => `<button type="button" class="card-contenue" data-id="${
-            filter.id
-        }">${
-            escapeXSS(filter.text)
-        }</button>`).join('');
+        const filtersHTML = filters.map(filter => `<div class="test">
+        <button type="button" class="card-contenue flip-scale-up-hor" data-id="${filter.id}">
+        ${escapeXSS(filter.text)} <i class="fa-solid fa-signs-post distance"></i>
+        </button> </div>`).join('');
         
         const assos = getFilteredAssociations();
         const nbAssos = assos.length;
@@ -66,13 +65,9 @@ const escapeXSS = (text) => {
         questionnaireBody.innerHTML = `
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
 
-        <div class="container-card-button text-erreur">
-            ${
-                nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`
-            }
-            ${
-                etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''
-            }
+        <div class="container-card-button text-erreur ">
+            ${nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`}
+            ${etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''}
         </div>`;
 
     console.log('etape', etape);
@@ -86,10 +81,12 @@ const escapeXSS = (text) => {
     if (btn.textContent === 'Retour') {
         filtersSelected[questions[etape - 1].type] = null;
         etape--;
+        questionnaireBody.setAttribute("id", "slide-"+etape)
     } else {
         const id = parseInt(btn.getAttribute('data-id'));
         filtersSelected[question.type] = id;
         etape++;
+        questionnaireBody.setAttribute("id", "slide-"+etape)
     }
 
     if (etape > 3) {
