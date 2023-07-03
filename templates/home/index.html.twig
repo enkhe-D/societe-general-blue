@@ -11,22 +11,23 @@
 
 	<h1 class="title-asso">Trouver mon asso</h1>
 
-	<section class="questionnaire-body container-card">
+	<section class="questionnaire-body container-card" id="slide_0">
 		<h3 class="title-question">
 			Question
 		</h3>
 
-		<div class="block-items card">
-			<button type="button" class="item ">Réponse</button>
-			<button type="button" class="item">Réponse</button>
-			<button type="button" class="item">Réponse</button>
-			<button type="button" class="item">Retour</button>
+		<div class="block-items card blobs">
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Retour</button>
 		</div>
 	</section>
 
 	<div id="Progress_Status">
   <div id="myprogressBar">1/4</div>
 </div>
+
 	{% block javascripts%}
 		<script>
 			const filters = {{ filters|json_encode()|raw }};
