@@ -87,27 +87,88 @@ class AppFixtures extends Fixture
         }
 
         $asso = new Association();
-        $asso->setName('Association 1');
+
+        $asso->setName('ZUP de CO');
+        $asso->addFilter($this->getReference('region_7'));
+
+        $asso->setName('ZUP DE CO');
         $asso->addFilter($this->getReference('region_0'));
+
         $asso->addFilter($this->getReference('modeDeTravail_0'));
         $asso->addFilter($this->getReference('disponibilite_0'));
         $asso->addFilter($this->getReference('mission_0'));
-
         $manager->persist($asso);
-
         $asso = new Association();
-        $asso->setName('Association 2');
+
+        $asso->setName('Les Ombres');
+
+        $asso->setName('Les Ombres ');
+
         $asso->addFilter($this->getReference('region_1'));
         $asso->addFilter($this->getReference('modeDeTravail_1'));
         $asso->addFilter($this->getReference('disponibilite_1'));
+        $asso->addFilter($this->getReference('mission_2'));
+        $manager->persist($asso);
+        $asso = new Association();
+
+        $asso->setName('My job Glass');
+        $asso->addFilter($this->getReference('region_2'));
+
+        $asso->setName('My Job Glass');
+        $asso->addFilter($this->getReference('region_0'));
+
+        $asso->addFilter($this->getReference('modeDeTravail_2'));
+        $asso->addFilter($this->getReference('disponibilite_0'));
+        $asso->addFilter($this->getReference('mission_6'));
+        $manager->persist($asso);
+        $asso = new Association();
+        $asso->setName('Article 1');
+        $asso->addFilter($this->getReference('region_3'));
+        $asso->addFilter($this->getReference('modeDeTravail_1'));
+        $asso->addFilter($this->getReference('disponibilite_2'));
+        $asso->addFilter($this->getReference('mission_5'));
+        $manager->persist($asso);
+        $asso = new Association();
+        $asso->setName('Nos quartiers ont du talent');
+        $asso->addFilter($this->getReference('region_4'));
+        $asso->addFilter($this->getReference('modeDeTravail_2'));
+        $asso->addFilter($this->getReference('disponibilite_3'));
         $asso->addFilter($this->getReference('mission_1'));
+        $manager->persist($asso);
+        $asso = new Association();
+        $asso->setName('Nos quartiers ont du talent');
+        $asso->addFilter($this->getReference('region_4'));
+        $asso->addFilter($this->getReference('modeDeTravail_0'));
+        $asso->addFilter($this->getReference('disponibilite_1'));
+        $asso->addFilter($this->getReference('mission_3'));
+        $manager->persist($asso);
+        $asso = new Association();
+        $asso->setName('Nos quartiers ont du talent');
+        $asso->addFilter($this->getReference('region_4'));
+        $asso->addFilter($this->getReference('modeDeTravail_1'));
+        $asso->addFilter($this->getReference('disponibilite_2'));
+        $asso->addFilter($this->getReference('mission_4'));
+        $manager->persist($asso);
+         $asso = new Association();
+        $asso->setName('Nos quartiers ont du talent');
+        $asso->addFilter($this->getReference('region_4'));
+        $asso->addFilter($this->getReference('modeDeTravail_1'));
+        $asso->addFilter($this->getReference('disponibilite_2'));
+        $asso->addFilter($this->getReference('mission_4'));
+        $manager->persist($asso);
+        $asso = new Association();
+        $asso->setName('Institut de Engagement');
+        $asso->addFilter($this->getReference('region_4'));
+        $asso->addFilter($this->getReference('modeDeTravail_1'));
+        $asso->addFilter($this->getReference('disponibilite_2'));
+        $asso->addFilter($this->getReference('mission_4'));
 
         $manager->persist($asso);
 
         $asso = new Association();
-        $asso->setName('Association 3');
+        $asso->setName('My Job Glass');
         $asso->addFilter($this->getReference('region_0'));
-        $asso->addFilter($this->getReference('modeDeTravail_2'));
+        $asso->addFilter($this->getReference('Article 1 - Dema1n'));
         $asso->addFilter($this->getReference('disponibilite_0'));
         $asso->addFilter($this->getReference('mission_1'));
 
