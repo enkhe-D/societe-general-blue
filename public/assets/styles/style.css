@@ -1,31 +1,66 @@
-.questionnaire-body{
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+
+body{
+  background-color: #F2F4F8;
+
+}
+
+/* Carte avec questions et options de réponse */
+.questionnaire-body {
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin:auto;
+  margin: auto;
+  margin-top: 50px;
+  color: #1D1D1B;
+  font-family: Montserrat;
+  background-color: beige;
+  border-radius: 10px;
+  width: 1054px;
+  height: 660px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: auto;
 }
 
 .title-asso{
   text-align: center;
 }
 
+/* Conteneur de questions */
 .title-question{
   width: 100%;
-  border:5px solid pink;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-.container-card-button{
-  border:5px solid green
+/* Conteneur pour cartes à boutons avec options de réponse */
+.container-card-button {
+  /* border-radius: 10px;
+  width: 954px;
+  height: 560px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-bottom: 50px;
+  height: 100%; */
+  display: flex;
+  flex-direction: column;
+
 }
 
-.cards{
+
+/* .cards{
   background-color: aqua;
   width: 400px;
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
+/* Conteneur de nom d'association (réponse) */
 .name-asso{
   border-radius:25px;
   width: 100px;
@@ -38,30 +73,102 @@ ul{
   border:1px solid;
 }
 
+/* Cartes à boutons avec réponses */
 .card-contenue{
   background-color: rgb(147, 204, 94);
-  width: 200px;
-  height: 200px;
+  width: 600px;
+  height: 50px;
+  display: inline-block; 
+  border-radius: 10px;
+
+  margin: 10px;
 }
 
-.bg-resultat-asso{
-  background-color: rgb(161, 16, 149);
-  width: 275px;
+/* Conteneur bizare, puis affiche le nom de l'association, puis affiche que l'association n'a pas été trouvée avec "Resultat" */
+/* .bg-resultat-asso{ */
+  /* background-color: rgb(161, 16, 149);
+  width: 954px;
+  height: 560px;
+  border-radius: 10px;
+  width: 954px;
+  height: 560px;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+  /* background-color: white; */
+  /* margin-bottom: 50px;
+  height: 100%; */
+  
+  /* display: flex;
+  flex-direction: column; */
+
 }
 
+/* Indique que l'association n'a pas été trouvée avec "Question" */
+.container-card-button text-erreur{
+  border-radius: 10px;
+  width: 954px;
+  height: 560px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-bottom: 50px;
+  height: 100%;
+ 
+}
+
+/* Texte lorsqu'aucune association ne correspond pas */
 .aucune-asso{
-  border: 5px solid black
+  border: 5px solid black;
+  font-family: Montserrat;
+  align-items: center;
 }
-
+/* 
 .c-est-quoi{
   background-color: blueviolet;
+} */
+
+/* bouton retour */
+.btn-retour{
+  border:1px solid #E4002C;
+  background-color: #E4002C;
+  width: 218px;
+  height: 50px;
+  border-radius:100px;
+  margin: auto;
+  font-family: Montserrat;
+  font-size: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  align-items: center;
+}
+/* bouton retour hover*/
+.btn-retour:hover {
+  border:1px solid #330072;
+  background-color: #330072;
+  color: #FFFFFF;
 }
 
-.btn-retour{
-  border:1px solid pink;
-  border-radius:10px;
-  width: 100%;
-}
+/* 
+.btn-suivant{
+  border:1px solid #E4002C;
+  background-color: #E4002C;
+  width: 218px;
+  height: 50px;
+  border-radius:100px;
+  width: Fixed (218px);
+  height: Hug (50px);
+  top: 437px
+  left: 634px
+  padding: 18px 47px 18px 47px;
+  gap: 10px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+
+  
+} */
 
 /* .block-items{
   display: flex;
@@ -70,3 +177,7 @@ ul{
   height: 200px;
 }
  */
+
+ #slide-1 h3{
+  color: purple;
+ }

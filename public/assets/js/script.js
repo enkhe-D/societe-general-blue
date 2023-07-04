@@ -65,7 +65,7 @@ const escapeXSS = (text) => {
         
         questionnaireBody.innerHTML = `
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
-
+        
         <div class="container-card-button text-erreur">
             ${
                 nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`
@@ -73,6 +73,7 @@ const escapeXSS = (text) => {
             ${
                 etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''
             }
+            
         </div>`;
 
     console.log('etape', etape);
@@ -86,10 +87,17 @@ const escapeXSS = (text) => {
     if (btn.textContent === 'Retour') {
         filtersSelected[questions[etape - 1].type] = null;
         etape--;
-    } else {
+        questionnaireBody.setAttribute("id", "slide-"+etape)
+    }else if (btn.textContent === 'Suivant') {
         const id = parseInt(btn.getAttribute('data-id'));
         filtersSelected[question.type] = id;
         etape++;
+        questionnaireBody.setAttribute("id", "slide-"+etape);
+    }else {
+        const id = parseInt(btn.getAttribute('data-id'));
+        filtersSelected[question.type] = id;
+        etape++;
+        questionnaireBody.setAttribute("id", "slide-"+etape)
     }
 
     if (etape > 3) {

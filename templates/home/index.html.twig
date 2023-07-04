@@ -7,26 +7,30 @@
 {% endblock %}
 
 {% block body %}
-	{{ dump() }}
+	{# {{ dump() }} #}
 
-	<h1 class="title-asso">Trouver mon asso</h1>
+	{# <h1 class="title-asso">Trouver mon asso</h1> #}
 
-	<section class="questionnaire-body container-card">
+
+	<section class="questionnaire-body container-card" id="slide_0">
 		<h3 class="title-question">
 			Question
 		</h3>
 
-		<div class="block-items card">
-			<button type="button" class="item ">Réponse</button>
-			<button type="button" class="item">Réponse</button>
-			<button type="button" class="item">Réponse</button>
-			<button type="button" class="item">Retour</button>
+		<div class="block-items card blobs">
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Réponse</button>
+			<button type="button" class="item blob">Retour</button>
 		</div>
 	</section>
+	
 	{% block javascripts%}
 		<script>
 			const filters = {{ filters|json_encode()|raw }};
-const associations = {{ associations|json_encode()|raw }};
+			const associations = {{ associations|json_encode()|raw }};
 		</script>
+	</section>
+
 	{% endblock %}
 {% endblock %}
