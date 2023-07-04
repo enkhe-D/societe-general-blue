@@ -54,7 +54,7 @@ const escapeXSS = (text) => {
         const filters = question ? question.filters : [];
         const filtersHTML = filters.map(filter => `<div class="test">
         <button type="button" class="card-contenue flip-scale-up-hor" data-id="${filter.id}">
-        ${escapeXSS(filter.text)} <i class="fa-solid fa-signs-post distance"></i>
+        ${escapeXSS(filter.text)} <i class="fa-solid ${filterPictos[filter.id] ? filterPictos[filter.id] : 'fa-circle-up'} distance"></i>
         </button> </div>`).join('');
         
         const assos = getFilteredAssociations();
@@ -67,11 +67,11 @@ const escapeXSS = (text) => {
             ${etape == 0 ? "": ""}
             ${etape == 1 ? `
             <div class="card-imge">
-                <img src="../images/teletravail.jpg" img-teletravail images> 
-                <img src="../images/bureau.jpg" img-bureau images>
+                <p class="img-text"><img src="../images/teletravail.jpg" img-teletravail images></p>
+                <p class="img-text"><img src="../images/bureau.jpg" img-bureau images></p>
             </div>
             `: ""}
-            ${nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`}
+            ${nbAssos > 0 ? filtersHTML : `<p class="scale-up-center aucune-asso">Aucune association ne correspond à vos critères.</p>`}
             ${etape > 0 ? '<div class="btn-retour"><button type="button" class="btn-back">Retour</button></div>' : ''}`
 
     console.log('etape', etape);
