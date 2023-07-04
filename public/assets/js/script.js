@@ -62,7 +62,7 @@ const escapeXSS = (text) => {
         
         questionnaireBody.innerHTML = `
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
-
+        
         <div class="container-card-button text-erreur">
             ${etape == 0 ? "": ""}
             ${etape == 1 ? `
