@@ -1,58 +1,9 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
 
 body{
   background-color: #F2F4F8;
-
 }
-
-/* Carte avec questions et options de réponse */
-.questionnaire-body {
-/* 
-icone qu on peut mettre a la place des images 
-<i class="fa-solid fa-laptop-file"></i> 
-<i class="fa-solid fa-hands-praying"></i>
-<i class="fa-solid fa-building"></i>
-<i class="fa-solid fa-hands-praying"></i>
-
-calendrier en hover sur les disponibilités
-<i class="fa-regular fa-calendar-check"></i>
-
-livre pour les missions 
-<i class="fa-solid fa-book-open"></i>
-
-COULEURS:
-
-palette énergie
-#E9041E
-#F80116
-#E55F50
-#C6361B
-#A4343A
-
-palette statut
-#000000
-#391325
-#002B2F
-#330072
-#010035
-#FFFFFF
-#FFFFFF
-
-La typographie 
-
-Montserrat
-La typographie Source Sans Pro
-
-la Montserrat et la Source Sans Pro.
-Ces deux typographies sont des Google Fonts. Elles permettent d’être utilisées de façon transversale sur tous les supports de communication : print, digitaux et bureautique.
-De la même manière que les couleurs, ces typographies fonctionnent ensemble.
-La Montserrat est toujours appliquée en capitale ; la Source Sans Pro en capitale et bas de casse.
-
-voir en bas des codes d autres details de la charte graphique
-*/
 
 .questionnaire-body{
   max-width: 800px;
@@ -134,8 +85,6 @@ voir en bas des codes d autres details de la charte graphique
 } */
 
 /* Conteneur de nom d'association (réponse) */
-.name-asso{
-=======
 .container-name-asso{
 
   border-radius:25px;
@@ -155,7 +104,6 @@ ul{
   height: 50px;
   display: inline-block; 
   border-radius: 10px;
-
   margin: 10px;
 }
 
@@ -218,7 +166,6 @@ ul{
   color:#fff;
   transition-duration: 350ms;
   transition-property: opacity filter;
-  
 }
 
 .distance:hover{
@@ -324,9 +271,68 @@ ul{
   
 } */
 
-  width: 100%;
+
+#map-france path {
+  fill: #E60028;
+  stroke: black;
+}
+#map-france path:hover {
+  fill: black;
+  stroke: white;
+  stroke-width: 5;
+  cursor: pointer;
 }
 
+.btn-begin {
+  border:1px solid #E4002C;
+  background-color: #E4002C;
+  width: 218px;
+  height: 50px;
+  border-radius:100px;
+  margin: auto;
+  font-family: Montserrat;
+  font-size: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  align-items: center;
+
+}
+
+.container-accueil {
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  color: #1D1D1B;
+  font-family: Montserrat;
+  background-color: beige;
+  border-radius: 10px;
+  width: 1054px;
+  height: 660px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+.container-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+
+.images-accueil {
+  border-radius: 20px;
+}
+
+.img-bureau{
+  rotate: -10deg;
+  width: 50%;
+  }
+  
 .aucune-asso{
   border: 1px solid;
   width: 100%;
@@ -417,6 +423,22 @@ img{
   width: 150px;
 }
 
+.img-teletravail{
+  width: 40%;
+  z-index:99;
+  translate: -10%;
+}
+
+.accueil{
+  padding: 5%;
+}
+
+/* .images{
+  display:flex;
+  flex-direction: row;
+  gap: 10%;
+} */
+
 /* .block-items{
   display: flex;
   flex-wrap: wrap;
@@ -424,7 +446,63 @@ img{
   height: 200px;
 }
  */
-
+ 
+*
+{
+  margin: 0;
+  padding: 0;
+}
+/* body
+{
+  background-color:;
+} */
+h2
+{
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-size: 30px;
+}
+h2 span
+{
+  color: #E74C3C;
+}
+.button-hover
+{
+  width: 300px;
+  height: 64px;
+  font: normal normal 700 1em/4em Arial,sans-serif;
+  overflow: hidden;
+  background-color: #E74C3C;
+  margin: 50px auto;
+  border-radius: 4px;
+}
+.button-hover a
+{
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  display: block;
+}
+.button-hover, .link
+{
+   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.button-hover:hover
+{
+  background-color: #C6361B;
+}
+.button-hover:hover .link
+{
+  margin-top: -4em;
+}
+/* End button [1] */
 
  #slide-1 h3{
   color: purple;
@@ -434,4 +512,3 @@ img{
 La bibliothèque des illustrations comporte des scènes de décors, des personnages et objets. Elle est disponible auprès de COMM/MAR et du Studio Société Générale
 (SO GRAPHIC).
 */
-
