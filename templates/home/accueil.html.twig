@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+{% block styles %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+{% endblock %}
+{% block body %}
+
+<div class="container-accueil">
+<h1 class="title-asso accueil">Trouve ton association</h1>
+<div class="container-images">
+<img src="{{ asset('images/accueil1.jpg') }}" class="images-accueil img-bureau" >
+<img src="{{ asset('images/accueil3.jpg') }}" class="images-accueil img-teletravail">
+</div>
+<p class="text-center p-5">Bienvenue sur la plateforme associatif Société Générale vous permettant de vous engager auprès de nos partenaires associatifs.
+</p>
+<!-- Start Button [1] -->
+<div class="button-hover">
+  <a class="link" href="{{path('app_home_questions') }}">Suivant</a>
+  <a href="{{path('app_home_questions') }}"><i class="fa-solid fa-flag-checkered fa-2xl"></i></a>
+</div>
+<!-- End Button [1] --
+</div>
+</div>
+
+
+
+{% endblock %}

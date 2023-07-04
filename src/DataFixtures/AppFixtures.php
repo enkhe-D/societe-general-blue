@@ -18,6 +18,13 @@ class AppFixtures extends Fixture
             'Occitanie',
             'Pays de La Loire',
             'Provence-Alpes-Côte d\'Azur',
+            'Grand Est',
+            'Auvergne-Rhône-Alpes',
+            'Bourgogne-Franche-Comté',
+            'Bretagne',
+            'Centre-Val de Loire',
+            'Corse',
+            'Normandie',
         ];
         foreach ($regions as $i => $region) {
             $filter = new Filter();

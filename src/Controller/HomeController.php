@@ -13,6 +13,14 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
+    public function accueil(): Response
+    {
+        return $this->render('home/accueil.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    #[Route('/questions', name: 'app_home_questions')]
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
         $filters = $entityManager->getRepository(Filter::class)->findAll();
