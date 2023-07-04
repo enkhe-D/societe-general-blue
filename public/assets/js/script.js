@@ -1,5 +1,3 @@
-/* alert("helllooooooowwwww") */
-
 const escapeXSS = (text) => {
     if (typeof text !== 'string') 
     return text;
@@ -66,17 +64,15 @@ const escapeXSS = (text) => {
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
 
         <div class="container-card-button text-erreur">
-           ${etape == 0 ? `<p> Hello </p>`: ""}
-           ${etape == 1 ? `<p> Bonjour </p>
-           <img src="../images/teletravail.jpg" width="100"> 
-           <img src="../images/bureau.jpg" width="100">
-           `: ""}
-            ${
-                nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`
-            }
-            ${
-                etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''
-            }
+            ${etape == 0 ? "": ""}
+            ${etape == 1 ? `
+            <div class="card-imge">
+                <img src="../images/teletravail.jpg" img-teletravail images> 
+                <img src="../images/bureau.jpg" img-bureau images>
+            </div>
+            `: ""}
+            ${nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`}
+            ${etape > 0 ? '<div class="btn-retour"><button type="button" class="btn-back">Retour</button></div>' : ''}`
 
     console.log('etape', etape);
     console.log('filtersSelected', filtersSelected);
@@ -104,9 +100,26 @@ const escapeXSS = (text) => {
     } else {
         displayQuestion();
     }
-    });
-    });
-    };
+});
+});
+};
+
+/*------------BARRE DE PROGRESSION--------------------------------------------*/
+var element = document.getElementById("myprogressBar"); 
+var taille = 1;
+
+function updateBar() {
+taille++; 
+element.style.width = taille * 20 + '%';
+    element.innerHTML = taille  + '/5';
+}
+
+function removeBar() {
+    taille--; 
+    element.style.width = taille * 15 + '%';
+    element.innerHTML = taille  + '/4';
+}
+/*-------------------------------------------------------------------------*/
 
     const getFilteredAssociations = () => {
         return associations.filter(asso => {
@@ -130,21 +143,11 @@ const escapeXSS = (text) => {
         const assos = getFilteredAssociations();
         
         questionnaireBody.innerHTML = `
-        <h3 class="title-question">
-            Résultat
-        </h3>
+        <h3 class="title-question">Résultat</h3>
         <div class="bg-resultat-asso">
-            ${
-                assos.map(asso => `
-                <div class="name-asso">
-                    <div class="card-body">
-                        ${escapeXSS(asso.name)}
-                    </div>
-                </div>
-            `).join('')
-            }
+            ${assos.map(asso => `<div class="container-name-asso"><h1 class="name-asso">${escapeXSS(asso.name)}</h1></div>`).join('')}
             ${assos.length === 0 ? '<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>' : ''}
-            <button type="button" class="btn-retour">Retour</button>
+            <div class="btn-retour"><button type="button" class="btn-back">Retour</button><div>
         </div>
         `;
 
@@ -257,19 +260,3 @@ const escapeXSS = (text) => {
 
     displayAssos();
     }
-
-
-    
-var element = document.getElementById("myprogressBar"); 
-var taille = 1;
-
-function updateBar() {
-taille++; 
-  element.style.width = taille * 25 + '%';
-    element.innerHTML = taille  + '/4';
-}
-function removeBar() {
-taille--; 
-  element.style.width = taille * 25 + '%';
-    element.innerHTML = taille  + '/4';
-}

@@ -80,7 +80,7 @@ class AppFixtures extends Fixture
         }
 
         $asso = new Association();
-        $asso->setName('Association 1');
+        $asso->setName('ZUP DE CO');
         $asso->addFilter($this->getReference('region_0'));
         $asso->addFilter($this->getReference('modeDeTravail_0'));
         $asso->addFilter($this->getReference('disponibilite_0'));
@@ -89,7 +89,7 @@ class AppFixtures extends Fixture
         $manager->persist($asso);
 
         $asso = new Association();
-        $asso->setName('Association 2');
+        $asso->setName('Les Ombres ');
         $asso->addFilter($this->getReference('region_1'));
         $asso->addFilter($this->getReference('modeDeTravail_1'));
         $asso->addFilter($this->getReference('disponibilite_1'));
@@ -98,9 +98,18 @@ class AppFixtures extends Fixture
         $manager->persist($asso);
 
         $asso = new Association();
-        $asso->setName('Association 3');
+        $asso->setName('My Job Glass');
         $asso->addFilter($this->getReference('region_0'));
         $asso->addFilter($this->getReference('modeDeTravail_2'));
+        $asso->addFilter($this->getReference('disponibilite_0'));
+        $asso->addFilter($this->getReference('mission_1'));
+
+        $manager->persist($asso);
+
+        $asso = new Association();
+        $asso->setName('My Job Glass');
+        $asso->addFilter($this->getReference('region_0'));
+        $asso->addFilter($this->getReference('Article 1 - Dema1n'));
         $asso->addFilter($this->getReference('disponibilite_0'));
         $asso->addFilter($this->getReference('mission_1'));
 
