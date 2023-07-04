@@ -33,4 +33,17 @@
 	</section>
 
 	{% endblock %}
+
+	<div id="Progress_Status">
+		<div id="myprogressBar">1/5</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts%}
+	<script>
+		const filters = {{ filters|json_encode()|raw }};
+const filterPictos = {{ filterPictos|json_encode()|raw }};
+const associations = {{ associations|json_encode()|raw }};
+	</script>
 {% endblock %}

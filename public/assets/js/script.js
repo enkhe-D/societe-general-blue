@@ -1,5 +1,3 @@
-/* alert("helllooooooowwwww") */
-
 const escapeXSS = (text) => {
     if (typeof text !== 'string') 
     return text;
@@ -54,11 +52,10 @@ const escapeXSS = (text) => {
     const displayQuestion = () => {
         const question = questions[etape];
         const filters = question ? question.filters : [];
-        const filtersHTML = filters.map(filter => `<button type="button" class="card-contenue" data-id="${
-            filter.id
-        }">${
-            escapeXSS(filter.text)
-        }</button>`).join('');
+        const filtersHTML = filters.map(filter => `<div class="test">
+        <button type="button" class="card-contenue flip-scale-up-hor" data-id="${filter.id}">
+        ${escapeXSS(filter.text)} <i class="fa-solid ${filterPictos[filter.id] ? filterPictos[filter.id] : 'fa-circle-up'} distance"></i>
+        </button> </div>`).join('');
         
         const assos = getFilteredAssociations();
         const nbAssos = assos.length;
@@ -67,14 +64,15 @@ const escapeXSS = (text) => {
         <h3 class="title-question"> ${escapeXSS(question ? question.title : '')}</h3>
         
         <div class="container-card-button text-erreur">
-            ${
-                nbAssos > 0 ? filtersHTML : `<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>`
-            }
-            ${
-                etape > 0 ? '<button type="button" class="btn-retour">Retour</button>' : ''
-            }
-            
-        </div>`;
+            ${etape == 0 ? "": ""}
+            ${etape == 1 ? `
+            <div class="card-imge">
+                <p class="img-text"><img src="../images/teletravail.jpg" img-teletravail images></p>
+                <p class="img-text"><img src="../images/bureau.jpg" img-bureau images></p>
+            </div>
+            `: ""}
+            ${nbAssos > 0 ? filtersHTML : `<p class="scale-up-center aucune-asso">Aucune association ne correspond à vos critères.</p>`}
+            ${etape > 0 ? '<div class="btn-retour"><button type="button" class="btn-back">Retour</button></div>' : ''}`
 
     console.log('etape', etape);
     console.log('filtersSelected', filtersSelected);
@@ -87,16 +85,13 @@ const escapeXSS = (text) => {
     if (btn.textContent === 'Retour') {
         filtersSelected[questions[etape - 1].type] = null;
         etape--;
+        removeBar()
         questionnaireBody.setAttribute("id", "slide-"+etape)
-    }else if (btn.textContent === 'Suivant') {
+    } else {
         const id = parseInt(btn.getAttribute('data-id'));
         filtersSelected[question.type] = id;
         etape++;
-        questionnaireBody.setAttribute("id", "slide-"+etape);
-    }else {
-        const id = parseInt(btn.getAttribute('data-id'));
-        filtersSelected[question.type] = id;
-        etape++;
+        updateBar()
         questionnaireBody.setAttribute("id", "slide-"+etape)
     }
 
@@ -105,9 +100,26 @@ const escapeXSS = (text) => {
     } else {
         displayQuestion();
     }
-    });
-    });
-    };
+});
+});
+};
+
+/*------------BARRE DE PROGRESSION--------------------------------------------*/
+var element = document.getElementById("myprogressBar"); 
+var taille = 1;
+
+function updateBar() {
+taille++; 
+element.style.width = taille * 20 + '%';
+    element.innerHTML = taille  + '/5';
+}
+
+function removeBar() {
+    taille--; 
+    element.style.width = taille * 15 + '%';
+    element.innerHTML = taille  + '/4';
+}
+/*-------------------------------------------------------------------------*/
 
     const getFilteredAssociations = () => {
         return associations.filter(asso => {
@@ -131,21 +143,11 @@ const escapeXSS = (text) => {
         const assos = getFilteredAssociations();
         
         questionnaireBody.innerHTML = `
-        <h3 class="title-question">
-            Résultat
-        </h3>
+        <h3 class="title-question">Résultat</h3>
         <div class="bg-resultat-asso">
-            ${
-                assos.map(asso => `
-                <div class="name-asso">
-                    <div class="card-body">
-                        ${escapeXSS(asso.name)}
-                    </div>
-                </div>
-            `).join('')
-            }
+            ${assos.map(asso => `<div class="container-name-asso"><h1 class="name-asso">${escapeXSS(asso.name)}</h1></div>`).join('')}
             ${assos.length === 0 ? '<p class="aucune-asso">Aucune association ne correspond à vos critères.</p>' : ''}
-            <button type="button" class="btn-retour">Retour</button>
+            <div class="btn-retour"><button type="button" class="btn-back">Retour</button><div>
         </div>
         `;
 
